@@ -12,23 +12,53 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
+
+        .card {
+            box-shadow: 0 10px 10px 0 rgba(11, 10, 5, 0.5);
+            transition: 0.3s;
+            border-radius: 5px;
+            /* 5px rounded corners */
+        }
+
+        /* Add rounded corners to the top left and the top right corner of the image */
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+    </style>
 </head>
 
 <body>
-   <div class="container-fluid">
-       <div class="row">
-           <div class="col-md-12">
-                <div class="colmd-4"> 
-                <a href="jdbc.html">JDBC</a>
-                </div>
-                <div class="colmd-4"> 
-                </div>
-                <div class="colmd-4"> 
-                </div>
-           </div>
-       </div>
-   </div>
-    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="jdbc.html">
+                    <div class="card col-md-4">
+                        <img src="images/JDBC.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
