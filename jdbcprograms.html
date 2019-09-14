@@ -1,20 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>NewBiz Bootstrap Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding:10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}    
+ 
+</style>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-           <h2>JDBC Programs</h2>
+    <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li class="drop-down"><a href="">Programs</a>
+            <ul>
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+              <li class="drop-down"><a href="#">Core java</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                 
+                </ul>
+              </li>
+               <li class="drop-down"><a href="#">Advance java</a>
+                <ul>
+                  <li><a href="jdbcprograms.html">JDBC programs</a></li>
+                  <li><a href="#">SERVLETS programs</a></li>
+                  <li><a href="#">JSP programs</a></li>
+               </ul>
+              </li>
+<!--
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+-->
+            </ul>
+          </li>
+          <li class="drop-down"><a href="">JAVA</a>
+            <ul>
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+              <li class="drop-down"><a href="#">Core java</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                 
+                </ul>
+              </li>
+               <li class="drop-down"><a href="#">Advance java</a>
+                <ul>
+                  <li><a href="jdbc.html">JDBC</a></li>
+                  <li><a href="#">SERVLETS</a></li>
+                  <li><a href="#">JSP</a></li>
+               </ul>
+              </li>
+<!--
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+-->
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header><!-- #header -->
+
+
+   
+    <div class="container-fluid mt-5">
+        <div class="row mt-5">
+            <h2 class="mt-5" >JDBC Programs</h2>
             <div class="col-md-12">
-                
+
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">App01 Connection Program</button>
                 <div id="demo1" class="collapse">
                     <pre>package com.shubham.jdbc;
@@ -42,11 +178,11 @@ public class JdbcApp1 {
 }
 </pre>
                 </div>
-                
+
             </div>
-            
+
             <div class="col-md-12 mt-3">
-                
+
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">App02 Create table by static query</button>
                 <div id="demo2" class="collapse">
                     <pre>package com.shubham.jdbc;
@@ -72,10 +208,10 @@ public class JdbcApp2 {
 
 </pre>
                 </div>
-                
+
             </div>
-               <div class="col-md-12 mt-3">
-                
+            <div class="col-md-12 mt-3">
+
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo3">App03 Create table by dynamic query</button>
                 <div id="demo3" class="collapse">
                     <pre>package com.shubham.jdbc;
@@ -107,11 +243,11 @@ public class JdbcApp3 {
 
 </pre>
                 </div>
-                
+
             </div>
-            
-               <div class="col-md-12 mt-3">
-                
+
+            <div class="col-md-12 mt-3">
+
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo4">App04 Insert records by static way</button>
                 <div id="demo4" class="collapse">
                     <pre>package com.shubham.jdbc;
@@ -143,11 +279,1131 @@ public class JdbcApp4 {
 
 </pre>
                 </div>
-                
+
             </div>
-            
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo5">App05 Insert records in dynamic way</button>
+                <div id="demo5" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// JDBC Application to insert records in dynamic way
+public class JdbcApp5 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		BufferedReader br = null;
+		
+		try {
+			OracleDriver driver = new OracleDriver();
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			br = new BufferedReader(new InputStreamReader(System.in));
+			
+			while(true) {
+				System.out.print("Enter employee no");
+				int ENO = Integer.parseInt(br.readLine());
+				
+				System.out.print("Enter employee name");
+				String ENAME = br.readLine();
+				
+				System.out.print("Enter employee salary");
+				float ESAL = Float.parseFloat(br.readLine());
+				
+				System.out.print("Enter employee address");
+				String EADDR = br.readLine();
+				
+				int rowcount = st.executeUpdate("insert into emp1 values("+ENO+",'"+ENAME+"',"+ESAL+",'"+EADDR+"')");
+				if(rowcount > 0) {
+					System.out.println(rowcount+" Records Updated");
+					System.out.println("Insert more records [yes/no]");
+					String option = br.readLine();
+					if(option.equals("yes")) {
+						continue;
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					System.out.println("No records updated");
+				}
+			}
+		} catch (Exception e) {
+			 e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				br.close();
+				st.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo6">App06 Update records in dynamic way</button>
+                <div id="demo6" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import oracle.jdbc.driver.OracleDriver;
+
+//take bonus amount and salary range as a input from user and then update records acoording to provided data... 
+public class JdbcApp6 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement stmt = null;
+		Scanner sc = null;
+		
+		try {
+			
+			// Class.forName("oracle.jdbc.OracleDriver");    // Old way
+			OracleDriver oracledriver = new OracleDriver(); // New way
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			stmt = con.createStatement();
+			
+			sc= new Scanner(System.in);
+			
+			System.out.print("Enter Bonus Amount : ");
+			int bonus_amount = sc.nextInt();
+			System.out.print("Enter Salary Range : ");
+			float sal_range = sc.nextFloat();
+			
+			int rowCount = stmt.executeUpdate("update emp1 set esal=esal+"+bonus_amount+" where esal < "+sal_range");
+			
+                        if(rowCount > 0){
+                            System.out.println(rowCount+" Records updated");
+                                }
+                        else{
+                            System.out.println("No records updated");
+                        }
+	}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				sc.close();
+				con.close();
+				stmt.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+}
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo7">App07 Delete records in static way</button>
+                <div id="demo7" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// JDBC Applicationn to delete records in static way
+public class JdbcApp7 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		try {
+			OracleDriver driver = new OracleDriver();
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			
+			int rowcount = st.executeUpdate("delete from emp1 where esal < 8000);
+			if(rowcount > 0) {
+				System.out.println(rowcount+" Records updated successfully");
+			}
+			else {
+				System.out.println("No records updated");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+				try {
+					con.close();
+					st.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+		}
+
+	}
+
+}
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo8">App08 Delete records in dynamic way</button>
+                <div id="demo8" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import oracle.jdbc.driver.OracleDriver;
+
+//JDBC Applicationn to delete records in dynamic way
+public class JdbcApp8 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		Scanner sc = null;
+		try {
+			OracleDriver driver = new OracleDriver();
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			sc = new Scanner(System.in);
+			
+			System.out.print("Enter salary range");
+			float salrange = sc.nextFloat();
+			
+			int rowcount = st.executeUpdate("delete from emp1 where esal < +salrange);
+			if(rowcount > 0) {
+				System.out.println(rowcount+" Records updated");
+			}
+			else {
+				System.out.println("No records updated");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+       finally {
+    	   try {
+			con.close();
+			st.close();
+			sc.close();
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+       }
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo9">App09 Fetch all records in JDBC app</button>
+                <div id="demo9" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// JDBC Application to fetch all records 
+public class JdbcApp9 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement stmt = null;
+		try {
+			DriverManager.registerDriver(new OracleDriver()); // new way...
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			stmt = con.createStatement();
+		    ResultSet rs = stmt.executeQuery("select * from emp1");
+		    System.out.println(rs); 
+		    System.out.println(" ENO\tENAME\tESAL\tEADDR");
+		    System.out.println("-------------------------------");
+		    while(rs.next()) {
+		    	System.out.print(rs.getInt(1)+"\t");
+		    	System.out.print(rs.getString(2)+"\t");
+		    	System.out.print(rs.getFloat(3)+"\t");
+		    	System.out.println(rs.getString(4));
+		    }
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				stmt.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo10">App10 Select particular colom from table</button>
+                <div id="demo10" class="collapse">
+                    <pre>package com.shubhm.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// JDBC Application to select particular colom from table  and print data
+public class JdbcApp10 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			
+			 rs = st.executeQuery("select ENO,ENAME from emp1");
+			 System.out.println("ENO\tENAME");
+			 System.out.println("--------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+		    	System.out.println(rs.getString(2));
+		    	
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo11">App11 Try with resources</button>
+                <div id="demo11" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JdbcApp11 {
+
+	public static void main(String[] args) {
+		/* In this case we handover the responsiblity to JVM to close all the resources coz these all interfaces(Connection,Statement...)
+		   are Implementing AutoClosable(I) internally so that JVM will close all the resources and we don't want to close all resource
+		   explicitly...
+		*/
+         try (
+         
+         	Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+         	Statement stmt = con.createStatement();
+         	Scanner sc = new Scanner(System.in);
+         	
+         ){
+        	 ResultSet rs = stmt.executeQuery("select * from emp1");
+        	 System.out.println(" ENO\tENAME\tESAL\tEADDR");
+ 		    System.out.println("-------------------------------");
+ 		    while(rs.next()) {
+ 		    	System.out.print(rs.getInt(1)+"\t");
+ 		    	System.out.print(rs.getString(2)+"\t");
+ 		    	System.out.print(rs.getFloat(3)+"\t");
+ 		    	System.out.println(rs.getString(4));
+ 		    }
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo12">App12 Select records based on address</button>
+                <div id="demo12" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+// JDBC application to select range of records based on address
+public class JdbcApp11 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		Scanner sc = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			sc = new Scanner(System.in);
+			
+			System.out.print("Enter salary");
+			float esal = sc.nextFloat();
+			
+			rs = st.executeQuery("select * from emp1 where esal = "+esal);
+			System.out.println(" ENO\tENAME\tESAL\tEADDR");
+		    System.out.println("-------------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+		    	System.out.print(rs.getString(2)+"\t");
+		    	System.out.print(rs.getFloat(3)+"\t");
+		    	System.out.println(rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+				sc.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo13">App13 Execute method for non select SQL query</button>
+                <div id="demo13" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+/* write java application and use execute method for non-select sql query and use getUpdateCount() to 
+find how many data will update */
+public class JdbcApp13 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			boolean b = st.execute("update emp1 set esal=esal+500 where esal < 10000);
+			int rowCount = st.getUpdateCount();
+			System.out.println(records updated : +rowCount);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo14">App14 Non select sql query using execute query method </button>
+                <div id="demo14" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+//JDBC Application that demonstrate using non-select SQL query in executeQuery methood after that how to use getUpdateCount()
+public class JdbcApp14 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+        try {
+        	DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			
+			rs = st.executeQuery("update emp1 set esal=esal+500 where esal < 5000");
+			int rowCount = st.getUpdateCount();
+			 System.out.println("Row Count : +rowCount);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo15">App15 Non select sql query using execute update method </button>
+                <div id="demo15" class="collapse">
+                    <pre>package com.shubham.jdbc;
+//Java application that demonstrate that executing select SQL query using executeUpdate() method after that how to use getResultSet()
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+public class JdbcApp15 {
+
+	public static void main(String[] args) {
+		
+		Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+        	OracleDriver driver = new OracleDriver();
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			
+			int rowCount = st.executeUpdate("select * from emp1");
+			rs = st.getResultSet();
+			System.out.println("  ENO\tENAME\tESAL\tEADDR");
+			System.out.println("-------------------------------");
+			
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        finally {
+        	try {
+				con.close();
+				rs.close();
+				st.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+        }
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo16">App16 DatabaseMetadata</button>
+                <div id="demo16" class="collapse">
+                    <pre>package com.shubham.jdbc;
+// JDBC Application to work with DatabaseMeta data and print all Database detials
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+/*
+ Metadata
+----------------
+>>> Data about data is called MetaData [means MetaData Providing more information about our data]
+ex.. Database name , Database version , Database major version , Database minor version
+
+>>> JDBC Provides 3 types of MetaData
+ 
+1. DatabaseMetadata 
+2. ResultsetMetadata
+3. parameterMetaData
+
+1. DatabaseMetadata(I)
+---------------------------------------
+>>> it is in interface present in java.sql package
+>>> Driver software vendor is responsible to provide implementation
+>>> we can use DatabaseMeta data to get more information of particular database product
+>>> we can use DatabaseMeta data to chech whether particular feature is supported or not
+>>> we can get DatabaseMeta data object with the help of getMetaData() 
+    public DatabaseMetaData getMetaData()
+   
+ ex. DatabaseMetaData dmd = con.getMetaData();
+
+>>> use of this DatabaseMetaData is that whenever you work with unknown DB then by using MetaData you will get DB information
+>>> java.sql.DatabaseMetaData
+
+[[[[ public DatabaseMetaData getMetaData() throws SQL Exception ]]]] 
+ */
+public class JdbcApp16 {
+
+	public static void main(String[] args) {
+	Connection con = null;
+	Statement st = null;
+	try {
+		OracleDriver driver = new OracleDriver();
+		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+		st = con.createStatement();
+		
+		DatabaseMetaData dmd = con.getMetaData();
+		System.out.println("Database product name :"+dmd.getDatabaseProductName());
+		System.out.println("Database product version :"+dmd.getDatabaseProductVersion());
+		System.out.println("Database major version :"+dmd.getDatabaseMajorVersion());
+		System.out.println("Database minor version :"+dmd.getDatabaseMinorVersion());
+		System.out.println("Database JDBC major version :"+dmd.getJDBCMajorVersion());
+		System.out.println("Database JDBC minor version :"+dmd.getJDBCMinorVersion());
+		System.out.println("Database URL :"+dmd.getURL());
+		System.out.println("Database User Name :"+dmd.getUserName());
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo17">App17 ResultSetMetadata</button>
+                <div id="demo17" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.Iterator;
+import java.util.Scanner;
+
+// JDBC Application which shows that how to know the coloum name and type of unknown database by using ResultSetMetaData rmd = rs.getMetaData;
+public class JdbcApp17 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		Scanner sc = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			sc = new Scanner(System.in);
+			
+			System.out.print("Enter table name");
+			String tablename = sc.nextLine();
+			rs = st.executeQuery("select * from "+tablename);
+			
+			ResultSetMetaData rmd = rs.getMetaData();
+			int colcount = rmd.getColumnCount();
+			
+			for(int i=1 ;  i<=colcount ; i++) {
+				System.out.println("Colom Name : "+rmd.getColumnName(i)+"\t");
+				System.out.println("Colom Type : "+rmd.getColumnTypeName(i)+"\t");
+				System.out.println("Colom Size :"+rmd.getColumnDisplaySize(i)+"\t");
+				System.out.println("-----------------------------------");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+       finally {
+    	   try {
+			con.close();
+			st.close();
+			rs.close();
+			sc.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+       }
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo18">App18 Take table name as dynamic input and print table colom and data</button>
+                <div id="demo18" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// JDBC Application that take table name as a dynamic input and print table coloum and table data of that particular table which was entered by user
+public class JdbcApp18 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		Scanner sc  = null;
+		
+		try {
+			
+			DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			sc = new Scanner(System.in);
+			
+			System.out.print("Enter Table Name : ");
+			String table_name = sc.nextLine();
+			
+			rs = st.executeQuery("select * from "+table_name);
+			ResultSetMetaData md = rs.getMetaData();
+			int colCount = md.getColumnCount();
+			for(int i=1 ; i<=colCount ; i++) {
+				System.out.print(md.getColumnName(i)+"\t");
+			}
+			System.out.println();
+			
+			while(rs.next()) {
+				
+				for(int i=1 ; i<=colCount ; i++) {
+					System.out.print(rs.getString(i)+"\t");
+				}
+				System.out.println();
+			}
+			
+		} catch (Exception e) {
+		     e.printStackTrace();	
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+				sc.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo19">App19 Take dynamic SQL query and print data</button>
+                <div id="demo19" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.Scanner;
+
+/*
+ Java application that take dynamic SQL Query it may be non-select or select SQl Query 
+                    >>> if it is select SQL Query then it return true so simply print records of the table
+                    >>> if it is non-select SQL Query then it return false so we have to update the Database....  
+ */
+public class JdbcApp19 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		Scanner sc = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			sc = new Scanner(System.in);
+			
+			System.out.println("Enter SQL query without ;(semi colon)");
+			String query = sc.nextLine();
+			
+			boolean b = st.execute(query);
+			
+		    if(b==true) {
+		    	rs = st.getResultSet();
+		    	ResultSetMetaData rmd = rs.getMetaData();
+		    	int colcount = rmd.getColumnCount();
+		    	
+		    	for(int i=1 ; i<=colcount ; i++) {
+		    		System.out.print(rmd.getColumnName(i)+"\t");
+		    		
+		    	}
+		    	System.out.println("");
+	    		System.out.println("-------------------------");
+		    	while(rs.next()) {
+		    		for(int i=1 ; i<=colcount ; i++) {
+		    			System.out.print(rs.getString(i)+"\t");
+		    		}
+		    		System.out.println("");
+		    	}
+		    }
+		    else {
+		    	int rowcount = st.getUpdateCount();
+		    	System.out.println(rowcount+" records updated");
+		    }
+		} catch (Exception e) {
+			e.printStackTrace(); 
+		}
+		finally {
+			try {
+				con.close();
+				rs.close();
+				st.close();
+				sc.close(); 
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo20">App20 Fetch data and transfer to HTML file</button>
+                <div id="demo20" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.io.FileOutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// Java Application that takes table name as a dynamic input and then fetch the data and tranfered to the desired  location in the form of html file
+public class JdbcApp20 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs= null;
+		Scanner sc = null;
+		FileOutputStream fos = null;
+		
+		try {
+			OracleDriver driver = new OracleDriver();
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			stmt = con.createStatement();
+			
+			System.out.println("Enter Table Name : ");
+			sc  = new Scanner(System.in);
+			String tableName = sc.nextLine();
+			
+			rs = stmt.executeQuery("select * from "+tableName);
+			
+			ResultSetMetaData md = rs.getMetaData();
+		    //int rowCount = md.getColumnCount();
+			int colCount = md.getColumnCount();
+			
+			String data = 'html body center table bgcolor='lightblue';
+			data = data+"<tr>";
+			for(int i=1 ; i<=colCount ; i++) {
+			    data = data+"<th>";
+				data = data+md.getColumnName(i)+"\t";
+				data = data+"</th>";
+				
+			}
+			data = data+"</tr>";
+		
+			while(rs.next()) {
+				data = data+"<tr>";
+			     for(int i=1 ; i<=colCount ; i++) {
+			    	 data = data+"<td>";
+			    	 data = data+rs.getString(i);
+			    	 data = data+"</td>";
+			     }
+				data = data+"</tr>";
+			}
+			
+			
+			data = data+"</table></center></body></html>";
+			
+			fos = new FileOutputStream("C://Users//SHUBHAM//Desktop//"+tableName+".html");
+			byte[] b = data.getBytes();
+			fos.write(b);
+			System.out.println("Data Tranfered to C://Users//SHUBHAM//Desktop//"+tableName+".html");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				stmt.close();
+				rs.close();
+				fos.close();
+				sc.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
+
+
+
+
+
+
+    <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h3>NewBiz</h3>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+        -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer><!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/mobile-nav/mobile-nav.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
 
 </body>
 
