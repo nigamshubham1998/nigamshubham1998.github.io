@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NewBiz Bootstrap Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding:10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}    
+ 
+</style>
+</head>
+
+<body>
+
+    <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li class="drop-down"><a href="">Programs</a>
+            <ul>
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+              <li class="drop-down"><a href="#">Core java</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                 
+                </ul>
+              </li>
+               <li class="drop-down"><a href="#">Advance java</a>
+                <ul>
+                  <li><a href="jdbcprograms.html">JDBC programs</a></li>
+                  <li><a href="#">SERVLETS programs</a></li>
+                  <li><a href="#">JSP programs</a></li>
+               </ul>
+              </li>
+<!--
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+-->
+            </ul>
+          </li>
+          <li class="drop-down"><a href="">JAVA</a>
+            <ul>
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+              <li class="drop-down"><a href="#">Core java</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                 
+                </ul>
+              </li>
+               <li class="drop-down"><a href="#">Advance java</a>
+                <ul>
+                  <li><a href="jdbc.html">JDBC</a></li>
+                  <li><a href="servlets.html">SERVLETS</a></li>
+                  <li><a href="#">JSP</a></li>
+               </ul>
+              </li>
+              <li><a href="ocja.html">OCJA</a></li>
+<!--
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+-->
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header><!-- #header -->
+
+
+   
+    <div class="container-fluid mt-5">
+        <div class="row mt-5">
+            <h2 class="mt-5"  >JDBC Programs</h2>
+<pre>
+    
+-------------------------------------------
+<b>Q. What is the need of learning advance Java or what application we're not able to develop in core java so that we moved to advance java ?</b>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:- with the help of core java you can able to develop desktop application...
+
+<b>Two types of application :-</b>
+---------------------------------------
+1. desktop application [Core java + JDBC]
+--------------------------------
+>>> the application which run on single machine are called desktop application 
+>>> desktop application is also called as  standalone application......  
+>>> the application which doesn't have client server arch......
+ex.. ms word
+        ms excell
+        vlc media player 
+        windows media player
+
+
+2. Web application [JSP+SERVLETS+JDBC]
+---------------------------
+>>> the application which run on a internet are called web application...
+>>> the application which run on client server arch are called web application...
+        ex... gmail.com , youtube.com etc...
+
+<b>there are three technologies are required in advance java  inorder to develop web application</b>
+
+1. JSP (Java server pages)  
+-----------------------------------------
+where ever the presentation logic is required to display something to the user then we should go for JSP 
+
+2. Servlets 
+----------------------------------------------------
+where ever the processing logic is required then we should go for servlets i.e the servelt meant for processing / business logic 
+ex.. user login validation
+        verification of login details...
+
+3. JDBC (Java Database connectivity)
+-------------------------------------------------------
+from normal java application if you have to communicate with database then we should have to go to JDBC 
+
+
+<b>In java there are 3 editions available</b>
+-------------------------------------------------------
+1. J2SE ----> Java 2 standard edition ------> for developing desktop application core java + JDBC 
+2. J2EE ----> Java 2 enterprise edition   -----> for developing web application JSP+JDBC+SERVLETS
+3. J2ME ----> Java 2 micro edition  ------> for developing mobile application 
+
+<b>JDBC version</b>
+---------------------
+JDBC 3.0 is a part of J2SE 1.4 (Java 4)
+no update in J2SE 5.0  (Java 5)
+JDBC 4.0 is part of Java SE 6.0 Java 6
+JDBC 4.1 is part of Java SE 7.0 Java 7
+JDBC 4.2 is part of Java SE 8.0 Java 8
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b></b>
+----------------------------------------------------------------------
+1. Driver(Translator)----> Driver is interface which was provided by SUN microsystem and all the database vendor should have to implement Driver interface in their                                                software (to convert java specific calls to database specific calls)
+2. Connection(Road)------> to connect with datbase
+3. Statement(Vechile)-----> by the help of statement we can send our SQL query to DB
+4. ResultSet(box)----> to get the ResultSet after performing some operation in the database
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<b>Storage area</b>
+-----------------
+as the part of our java appl we reqquired to store data like customer info , billing info and calls info 
+
+to store this data , we required storage area . there are two types of storage area
+--------------------------------------------------------
+1. Temporary storage area
+------------------------------
+these are the temporary storage area were data will store temorary like stack , heap 
+ex . all JVM memory (heap , stack)
+once JVM will be shutdown all the memory stored in this area will be loss automatically....
+
+
+2. Permanent storage area
+----------------------------------------
+also known as persisatance area
+here we can store data permanently
+ex . FileSyatem , Database , Dataware houses , Big data technologies....
+
+<b>FileSystem:- (like ms - excell)</b>
+-----------------
+File System can be provided by local OS (local access)
+File system are best suitable to store very less amount of data...(KB)
+
+<b>Limitations:-</b>
+-----------------------
+1. we can not store huge amount of data...
+2. there is no query lang support hence operations will be very complex...
+3. there is no security...
+4. there is no mechanism to prevent data duplicacy(duplicate)
+
+>>> to overcome this problem we have to use database(oracle,mySql,DB2...)
+
+<b>Database</b>
+---------------
+1. we can store huge amount of data inside database (GBs)
+2. there is query lang support hence operations will be very easy...
+3. to access DB compulsary we have to provide username and password to access that DB (data security)
+4. No chance of data duplicacy....
+
+<b>Limitations</b>
+-----------------
+1. we can not store data in TBs...
+
+<b>
+Dataware houses</b>
+--------------------------
+to overcome this problem compulsary we've to use dataware houses.
+
+<b>Query Processing System</b>
+----------------------------------------------------------------------------
+1. Query tokenization
+>>> Take SQL query as a input and divided into no of tokens...
+
+2. Query processing
+>>> take query as a construct query tree and check syntactical mistakes
+
+3. Query Optimization
+>>> perform optimization of query to reduce performance time
+
+4. Query execution
+>>> take query as a input and execute that SQL query...
+--------------------------------------------------------------------------------------------------------------------------
+<b>What is JDBC and its features ???</b>
+-------------------------------------------
+
+1. JDBC is a technology which can be used to communicate with the database from java....
+2. JDBC is the part of J2SE
+3. JDBC is a specification which was given by SUN microsystem and Implemented by all DB vendor
+4. Database vendor provided implementation is called Driver Software
+
+
+<b>JDBC Features</b>
+------------------
+1. JDBC API is a standard API . we can communicate with any database without rewritting our application i.e JDBC API is database indepenedent API
+2. JDBC driver are developed in java and hence JDBC Concept is applicable in any platform i.s JDBC is Platform independent technology
+3. by using JDBC api we can easily perform CRUD operation 
+   C---> create (insert)
+   R---> Retrieve(to fetch data)
+   U---> Update
+   D---> delete
+
+<b>
+Evolution of JDBC :-</b>
+-----------------------------------
+1. If we want to commicate with DB by using C/C++ compulsary we have to use database specific library in our application directly
+2. In the above diagram C or C++ appl uses oracle DB specific lib directly
+3. the probelm in tihs approach is that if we want to update our Database In mysql at future then compulsary we must have to use mysql provided library 
+    so that our C/C++ application will database dependent 
+
+4. to overcome from this problem microsoft people introduced "ODBC" concept in 1992 . it is Database independent API
+5. with ODBC api application can communicate with any database directly ... 
+
+
+<b>Limitations of ODBC Driver</b>
+---------------------------------------
+1. ODBC concept is work only for windows machine . it is platform dependent technology
+2. ODBC Driver are implemented in C language . if we use ODBC Driver for java appl then performance will be down
+     bcoz of internal conversion from java to C and C to java
+3. bcoz of above reason SUN people will launch JDBC[Java database connectivity] concept
+4. JDBC api will be developed in java so it is platform independent technology
+
+<b>ODBC 
+-------</b>
+>>> database independent Driver
+>>> platform dependent Driver
+
+<b>JDBC
+------</b>
+>>> platform independent
+>>> Database indepenedency
+>>> Languange depedent
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<b>Q. what is JDBC API?</b>
+ANS:- >>> JDBC API is collection of several interface and classes.
+           >>> prorgammers can use this classes and interface to interact with database
+           >>> Driver software vendor is responsible to provide impmenetation of JDBC Driver and provide as a Driver software
+           >>> JDBC API defines 2 packages
+
+1. java.sql package
+2. javax. sql package
+
+>>> Programmers are not responsible to provide implementation for JDBC interface
+>>> most of the times database vendor is responsible to provide implementation of all Driver interface
+
+
+<b>
+Difference b/w Driver interface  , Driver class and Driver Software???
+---------------------------------------------------------------------------------------------------</b>
+>>> Driver interface is present inside java.sql package
+       this interface is just a specification which was provided by SUN microsystem and all DB vendor should has to implement this
+
+>>> it is the implementation class of Driver interface
+       >>> sun.jdbc.odbc.JdbcOdbcDriver
+
+>>> it is the collection of implementation classes of  various interfaces present in JDBC api
+>>> it act as bridge b/w java appl and DB
+>>> to convert java specific call to DB specific calls and DB specific calls to java specific calls.
+      
+if Driver software is developed in java language such type of Driver are called pure java Driver
+if Driver software developd java and native lang(C/C++) then such type of Driver is called Parital java Driver
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<b>Types Of Driver
+-----------------------</b>
+while communication with database , we have to convert our java specific calls to DB specific calls and DB specific calls to Java specific calls . for this Driver software 
+required . in the market there are sevaral Driver software are available but all the Driver are categorized into 4 parts
+
+<b>1. Type-1 Driver (JDBC-ODBC Bridge Driver) or Bridge Driver</b>
+---------------------------------------------------------------------------------------------
+>>> this Driver provided by SUN Micrsosystem as the part of our JDK . but this support is available upto JDK 1.7 version 
+>>> Internally this Driver will take support of ODBC Driver to communicate with DB (SUN MIcrosystem has provided this Driver with the interdedpendent of Microsoft)
+>>> type-1 Driver convert JDBC calls(Java calls) to ODBC calls and then ODBC Driver convert ODBC calls into DB specific calls 
+>>> thats why type-1 driver is act as bridge b/w JDBC and ODBC 
+
+<b>
+Advantages :-</b>
+--------------------
+1. it is very easy to maintain
+2. we are not require to install seperatly bcoz it is the part of JDK unitll 1.7V
+3. type-1 Driver won't communicate with DB directly hence it is DB independent Driver bcoz migrating from DB to other DB will be very easy....
+
+<b>Limitation :-</b>
+------------------
+1. it is the slowest Driver among all JDBC Driver (Snail Driver) bcoz first it will convert into JDBC calls into ODBC and ODBC Driver convert ODBC calls to DB specific calls
+2. this Driver internally depends on ODBC Driver , which will work on windows machine hence type-1 Driver is platform dependent
+3. no support after JDK 7
+
+>> platform dependent
+>> database independency
+
+
+<b>
+2. Type-2 Driver (Native API partly java Driver) or Half java and half native language Driver</b>
+-------------------------------------------------------------------------------------------------------------------------------
+>>> it is also called Native API partly java Driver (java + C/C++)
+>>> type -2 Driver is exactly same as type-1 Driver except ODBC Driver is replaced with Vendor Specfic Library
+>>> native library means set of functions provided by DB vendor and MOstly written in (C/C++)
+>>> we have to install vendor specific provided native library on the Client machine
+>>> type-2 Driver convert JDBC calls into vendor Specific native lib calls which can be understandable by directly to the DB 
+>>> only one time conversion is required...
+
+<b>Advantages</b>
+----------------
+>>> when compare with type-1 Driver type-2 driver is most fast bcoz only one time conversion will be there
+>>> no need of arranging ODBC Driver
+>>> when compare with type-1 Driver portablity is more in type-2 Driver 
+
+<b>Limitations</b>
+----------------
+>>> internally this driver using DB specific lib and hence it is DB vendor dependent Driver . Bcoz of this migrating from one DB to another is complex
+>>> for using this Driver compulsary we have to  install DB vendor provided specific libb.....
+>>> there is no gurantee thet all DB vendor will provide their own vendor specific lib
+
+>> platform independent
+>> database vendor provided specific lib dependency
+
+
+<b>
+3. Type-3 Driver (all java network protocol Driver or Middleware server</b>
+--------------------------------------------------------------------------------------------------------
+>>> type-3 driver converts JDBC calls into middle ware server specific calls  middleware server specific calls is directly converted into DB specific calls
+>>> internally middleware server may use type-1 , type-2 , type-4 Driver to communicate with th DB
+
+<b>Advantages</b>
+---------------
+>>> this Driver won't communicate with DB directly and hence it is Database independent Driver
+>>> this Driver is platform Independent Driver[ODBC Driver , vendor provided specific lib]
+>>> no need of ODBC Driver or vendor specific library
+
+<b>Limitations</b>
+--------------
+1. bcoz of having middleware server in the middle , there may be a chance of performance problem 
+2. we need to purchase middle ware server and hence the cost of this Driver is more when compared with remaining Drivers
+Ex. IDS Driver (Internet Database access Server)
+
+>> platform independent
+>> database independency(no need of ODBC Driver  or vendor specific library)
+
+Note:-  the only driver which is platform independent and DB independent is type-3 driver
+
+<b>4. Type-4 Driver (Thin Driver or pure java Driver)</b>
+--------------------------------------------------------------------------------------------------------
+>>> this driver is developed to talk with DB directly without taking support of [ODBC Driver or vendor provided specific library + middle ware server]
+>>> this driver uses DB specific native protocols to communicate with the DB
+>>> this Driver converts JDBC calls to direclty DB specific calls
+>>> this driver is developed only in java hence it is pure java driver , bcoz of this type-4 driver is platform independent Driver
+
+<b>Advantages</b>
+------------------
+1. won't require any native library , ODBC Driver or Middleware Server
+2. It is platform independent Driver
+3. it uses DB vendor specific native protocol and hence Security is more
+
+<b>Limitations</b>
+-----------------
+The only Limitation of this Driver is , it is DB dependent Driver bcoz it is communicating with the DB Directly
+
+<b>Q. Difference b/w thic and thin Driver</b>
+-----------------------------------------------------------
+>>> if Driver won't require any extra component to communicate with DB  , such type of Driver is called thin Driver [type-4]
+>>> if Driver require some extra content [ODBC Driver  , DB vendor specific lib  , middleware server ] are called thick Driver [type-1 , type-2 , type-3 Driver]
+ 
+<v>Steps to develop JDBC application</v>
+------------------------------------------------
+1. Load and Register Driver
+2. Establish Connection b/w java application and database
+3. create Statement Object
+4. Send SQL query
+5. Close all the resources...
+
+
+<b>Q. Connection is an interface , then how we can get Connection Object</b>
+-----------------------------------------------------------------------------------------------------
+we're not getting connection object we're getting Its implementation class Object
+this impllementation class is availabe as the part of Driver software . Driver software vendor is responisble to provide its implementation
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b>Q. Connection is an interface , then how we can get Connection Object</b>
+------------------------------------------------
+1. executeQuery()
+2. executeUpdate()
+3. execute()
+
+<b>1. executeQuery()[select , create]
+---------------------------</b>
+this SQL query is for select SQL query (select) 
+>>> public ResultSet executeQuery(String query); throws SQL Exception
+
+ex..ResultSet rs = st.executeQuery("select  * from emp1");
+        while(rs.next()){
+      ---
+------
+}
+
+<b>
+2. executeUpdate()
+---------------------------</b>
+this SQL query is for non-select SQL query (insert,update,drop,delete)
+>>> public int executeUpdate(String query) throws SQL Exception
+
+ex.. int rowCount = st.executeUpdate();
+
+<b>
+3. execute()
+------------------</b>
+this SQL query is for both select and non-select SQL query . when we don't know the query in advance the we use this.. (mostly used is dynamic way)
+>>> public boolean execute(String query); throws SQL Exception
+       st.execute()
+
+1. execute() method return true value when we execute select SQL query...
+2. execute() method return false value when we execute non-select SQL query...
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b>Types of MetaData:-</b>
+------------------------------------------------
+<b>Metadata</b>
+----------------
+>>> Data about data is called MetaData [means MetaData Providing more information about our data]
+ex.. Database name , Database version , Database major version , Database minor version
+
+<b>>>> JDBC Provides 3 types of MetaData</b>
+ 
+1. DatabaseMetadata 
+2. ResultsetMetadata
+3. parameterMetaData
+---------------------------------------------------------------------
+<b>1. DatabaseMetadata(I)</b>
+---------------------------------------
+>>> it is in interface present in java.sql package
+>>> Driver software vendor is responsible to provide implementation
+>>> we can use DatabaseMeta data to get more information of particular database product
+>>> we can use DatabaseMeta data to chech whether particular feature is supported or not
+>>> we can get DatabaseMeta data object with the help of getMetaData() 
+    public DatabaseMetaData getMetaData()
+   
+ ex. DatabaseMetaData dmd = con.getMetaData();
+
+>>> use of this DatabaseMetaData is that whenever you work with unknown DB then by using MetaData you will get DB information
+>>> java.sql.DatabaseMetaData
+
+[[[[ public DatabaseMetaData getMetaData() throws SQL Exception ]]]] 
+
+<b>2. ResultSetMetaData(I)</b>
+------------------------------------------
+ResultSetMetadata
+----------------------------------
+Data about the data existed in ResultSet object ...
+it includes    >> no of coloums
+                       >> colom name
+                       >> colom data types
+                       >> colom size...
+
+>>> to get ResultSetMetaData Object java hai provide seperate interface
+
+java.sql.ResultSetMetaData
+
+[[[[  public ResultSetMetaData getMetaData() throws SQL Exception ]]]]
+
+    ResultSetMetaData rmd = rs.getMetaData()
+>>> when you getting this MetaData we will get details of ResultSet
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b>Types of ResultSet:-</b>
+----------------------------
+<b>How to get required ResultSet object?</b>
+------------------------------------------------------
+
+CONCUR_READ_ONLY---> 1007
+CONCUR_UPDATABLE---->1008
+
+TYPE_FORWARD_ONLY---->1003
+TYPE_SCROLL_INSENSITIVE----> 1004
+TYPE_SCROLL_SENSITIVE -----> 1005
+
+Class.forName("oracle.jdbc.OracleDriver");
+con = DriverManager.getConnection();
+st = con.createStatement(1007,1005);
+or
+st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE , ResultSet.CONCUR_READ_ONLY);
+st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE , ResultSet.CONCUR_UPDATABLE);
+ 
+<b>By default our ResultSet has 2 properties</b>
+-----------------------------------------------------------
+Class.forName("oracle.jdbc.OracleDriver");
+con = DriverManager.getConnection();
+st = con.createStatement();
+ResultSet rs = st.executeQuery("-----------");
+>>> 1007 ----> CONCUR_READ_ONLY
+>>> 1003 ----> TYPE_FORWARD_ONLY
+
+<b>-------------------------------------------------------------------
+List of methods supported by Non-Scrollabe ResultSet(Forward_Only ResultSet)
+-----------------------------------------------------</b>
+1. rs.next()
+    >> it check whether next records is available or not . if it is availble then cursor will move to that position
+
+2. rs.getXxx()
+    >> Read coloum values and from records either with coloum index or coloum name
+
+3. rs.getRow()
+    >> it return current position of cursor in the ResultSet i.e row number
+
+<b>-------------------------------------------------------------------
+List of methods supported by Scrollabe ResultSet
+-----------------------------------------------------</b>
+<b>1. rs.next()
+2. rs.getXxx()
+3. rs.getRow()</b>
+
+<b>4. rs.previous()</b>
+   >> it checks whether previous records is availebel or not . if it is available then the cursor will move to that records position
+
+<b>5. rs.beforeFirst()</b>
+   >> the cursor will move to the before first records position
+
+<b>6. rs.afterLast()</b>
+   >> move the cursor to the after last records position
+
+<b>7. rs.first()</b>
+    >> moves cursor to the first position
+
+<b>8. rs.absolute(int x)</b>
+     the argument can be either +ve or -ve
+    >>  if it is positive then the cursor will move to that records position from top of ResultSet
+    >>  if it is negative then the cursor will move to that records position from last of ResultSet
+
+<b>9. rs.relative(int x)</b>
+     the argument can be either +ve or -ve
+    >> if the args  is positive then the cursor will move to that records position in the forward direction
+ >> if the args  is negative then the cursor will move to that records position in the backward direction
+
+<b>10. rs.isFirst()</b>
+     >>  it return true if the cursor is in first position 
+
+<b>11. rs.isLast()</b>
+   >>  it return true if the cursor is in last position 
+
+<b>12. rs.isBeforeFirst()</b>
+    >> it return true if cursor is in beforeFirst position
+
+<b>13. rs.isAfterLast()</b>
+    >> it return true if cursor is in afterLast position
+
+<b>14. rs.refreshRow()</b>
+    >> we can use this method in Scroll_Sensitive resultset to refresh the ResultSet object to get updatable records values from DB    
+
+<b>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Utilization of Properties file for JDBC application
+----------------------------------------------------------------------</b>
+1. To manage JDBC parameters in jDBC Application
+2. To manage frequently changed data in Java Application
+3. to manage label of GUI Components in GUI Application
+4. to manage exception message in Exceptoin Handling
+5. To manage Locale respective messages in Internationlization
+6. to manage validation messages in data validations
+-------
+-------
+------
+
+<b>properties file
+--------------------</b>
+driver_Class = oracle.jdbc.OracleDriver;
+driver_URL = jdbc:oracle:thin:@localhost:1521:orcl;
+DBUserName = shubhamdb;
+DBPassword = shubham;
+
+<b>javaAppl
+----------------</b>
+fis  = new FileInputStream("----properties file location-----");
+properties p = new properties();
+p.load(fis);
+
+String driver_Class  = p.getProperty("driver_Class ");
+String driver_URL = p.getProperty("driver_URL  ");
+String DBUserName = p.getProperty("DBUserName  ");
+String DBPassword   = p.getProperty("DBPassword");
+
+Class.forName(driver_Class);
+con = DriverManager.getConnection("driver_URL ","DBUserName ","DBPassword ");
+
+<b>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Batch Updations and PreparedStatement
+----------------------------------------------------------------------
+Batch Updations
+-----------------------
+problem without batchUpdations
+------------------------------------------------</b>
+>>> When we submit multiple SQL query to the DB one by one then lot of time will be wasted in request and response
+>>> To overcome from this problem , we should go for batch updation 
+
+<b>What is batch updation ?
+-----------------------------------</b>
+>>> When we have a group of SQL queries into a single batch and we can send that batch at a time to the DB is called Batch updations
+
+ex.. Room A----> 100 Sticks ---> we have to put 100 sticks on room B
+        Room B---->
+approach 1
+approach 2  
+1st batch  --> 20 sticks  (2 min)
+2nd batch --> 20 sticks  (2 min)
+3rd batch --> 20 sticks   (2 min)
+4th batch --> 20 sticks   (2 min)
+5th batch --> 20 sticks   (2 min)
+----------------------------------
+total time ---> 10 min
+
+<b>
+we can implement batch updations by using the following methods
+----------------------------------------------------------------------------------------------</b>
+1. public void addBatch(String SQL query)
+2. public int[] executeBatch()
+
+<b>
+Advantage of Batch Updations
+------------------------------------------</b>
+1. Reduce exection time of all SQL queries
+2. Increase performance of application
+3. Network traffic will be reduced
+
+<b>
+Disadvantages of Batch Updations
+------------------------------------------</b>
+1. We can use batch updations for Non-select SQL query only...
+     if we're trying to use for select sql query then we will get RE: saying BatchUpdateException
+     
+
+<b>--------------------------------------------
+PreparedStatement(I)
+--------------------------------------------</b>
+>>> PrearedStatement is an interface present in java.sql package
+
+<b>
+Need of PreparedStatement(I)
+-----------------------------------------</b>
+In the case of normal statement , whenever we're executing SQL query every time compilation and execution of that query will be happened
+
+Statement st = con.createStatement();
+ResultSet rs = st.executeQuery("select  * from emp1");
+
+Sometimes in many application we require to to execute same SQL query multiple times with same or different input values
+
+ex.1 In IRCTC application , it is common requirement to list out all trains b/w 2 places
+
+select * from trains where source = 'XXX' and destination = 'YYY';
+
+query is same but source and destination places may be different . this query is required to execute lakhs of times per day
+
+
+to overcome from this problem , we should go for preparedstatement 
+
+>>> the main advantage of PreparedStatement is the query will be compiled only once even through we are executing multiple times , so that overall performace will 
+be increased 
+
+>>> we can create prepare Statement by using prepareStatement() of Connection interface
+
+public preparedStatement prepareStatement(String SQL query) throws SQL Exception
+EX. 
+       PreparedStatement pst = con.prepareStatement(Sql Query);
+
+>>> At this line SQL query will send to the DB and DB engiee will compile that SQL query and stores in the DB
+>>> that pre compiled query will return to the java application in the form of PreparedStatement  object 
+>>> hence PreparedStatement is also called "Pre compiled query"....
+>>> whenever we call execute method DB enginee will won't compile query again and again it will directly execute that query , so that overall performance will be increased
+
+<b>
+Advantages of PreparedStatement
+--------------------------------------------------</b>
+1. Performance will be improved when compared with simple statement bcoz query will be compiled only once
+2. network traffic will be reduced b/w java applicatin and DB bcoz we are not required to send SQL query every time to DB
+3. we are not required to provide input values at the begining and we can provide dynamically so that we can execute same SQL query multiple times with differenet valeus
+4. best suitable for BLOB and CLOB 
+5. it prevents SQL injection attack
+
+<b>
+Limitations
+-------------------------</b>
+1. we can use PreparedStatement for only one SQL query like CDMA phone but we can use simple statement for any query like GSM phone
+
+
+<b>
+    
+statement
+--------------
+</b>
+st.executeUpdate(insert , delete, update);
+
+<b>
+PreparedStatement
+---------------------------</b>
+PreparedStatement pst = con.preapreStatemene("insert into emp1 value(?,?,?,?)")
+p")
+
+<b>
+DIfference b/w statement and PreparedStatement
+--------------------------------------------------------------------------</b>
+Statement----> when we want execute all SQL query individually then we should go for Statement
+PreparedStatement----> when we want execute same SQL query in the next sequence then we should go for PreparedStatement
+                                             >> best suitalbe for BLOB and CLOB 
+                                             >> secure from SQL attack
+
+<b>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BLOB and CLOB Datatype
+----------------------------------------------------------------------</b>
+<b>BLOB[Binary Large Object]:-</b>
+>>> BLOB is known as Binary Large Object 
+>>> it as a datatype(Oracle DB) which is used to store BLOB type data (binary large object) type data Ex.. images
+>>> PreparedStatement is best suitable to deal with BLOB data type
+
+<b>
+Steps to insert BLOB datatype[image] into Database
+------------------------------------------------------------------------</b>
+<b>Step 1: create table emp2 of BLOB datatype coloum</b>
+---------
+             create table emp2 (ENO number(3) primary key , EMP_PIC blob);
+
+<b>Step 2: Create PreparedStatement object</b>
+---------
+             PreparedStatement pst = con.PreparedStatement("insert into emp2 values(?,?)");
+
+<b>
+Step 3: pst.setInt(1,ENO);</b>
+---------
+
+<b>
+Step 4: Locate the image file by creating File Object</b>
+---------
+             File file = new File("E:/myimg.jpg");
+
+<b>Step 5: Create FileInputStream object with the help of File Object
+</b>
+---------
+              FileInputStream fis = new FileInputStream(file);
+
+<b>Step 6:  set BLOB type data to PreparedStatement parameter by creating binary stream</b>
+---------           
+              pst.setBinaryStream(2,fis);
+              
+<b>Step 7 : send execution signal to Database enginee </b>
+---------
+              pst.executeUpdate();
+              sopln("Employee "+ENO+" with pic inserted successfully...");
+      
+       
+<b>CLOB[Character Large Object]:-
+------------------------------------------</b>                   
+1. CLOB is a datatype(Oracle DB) which is used to store CLOB data (Character large object data) into database.
+
+Methods common in BLOB and CLOB both
+----------------------------------------------------------
+          BLOB[Binary Oriented Stream]                           CLOB[Character Oriented Stream] 
+--------------------------------------------------------------------------------------------------------------------
+       1. setBinaryStream()---------------------------------------->  setCharacterStream()
+       2. getBinaryStream()----------------------------------------> getCharacterStream()
+       3. FileInputStream() -----------------------------------------> FileReader()
+       4. FileOutputStream() --------------------------------------> FileWritter()
+       5. InputStream() ----------------------------------------------> Reader()
+       6. OutputStream()---------------------------------------------> Writter()
+
+
+<b>
+Steps to insert CLOB data into Database:-
+-------------------------------------------------------</b>
+<b>Step 1 : Creation of CLOB type table</b>
+----------
+              create table emp3 (AppName varchar2(5) , CLOBDoc clob );
+
+<b>Step 2 : Make PreparedStatment Object</b>
+----------
+               PreparedStatement pst = con.prepareStatmenet("insert into emp3 values(?,?)");
+
+<b>Step 3 : Insert Appname </b>
+----------
+              pst.setString(1,"App1");
+
+<b>Step 4 :  Locate the xml file by creating File Object</b>
+---------
+             File file = new File("E:\documents\web.xml");
+
+<b>
+Step 5 : Create FileReader object with the help of File Object</b>
+--------
+             FileReader fr = new FileReader(file);
+
+<b>Step 6 : set CLOB type data to PreparedStatement parameter by creating charcter stream</b>
+--------
+          pst.setCharacterStream(2,fr);
+
+<b>
+Step 7 :  send execution signal to Database enginee </b>
+-------- 
+               pst.executeUpdate();
+              sopln("Application "+App1+" with XML file inserted successfully...");
+      
+
+<b>
+Steps to retrieve CLOB data into Database:-
+-------------------------------------------------------</b>
+<b>Step :1 Get ResultSet Object</b>
+---------
+          ResultSet rs = pst.executeQuery("select * from emp3");
+
+<b>Step : 2  Read normal data from ResultSet</b>
+--------
+           rs.next()
+          String AppName = rs.getInt(1);
+          sopln(AppName);
+
+<b>Step : 3 Prepare Target file [set location] </b>
+--------
+           FileWriter fr = new FileWrite("E:\document\Appname.xml");
+
+<b>Step : 4 Getting CharacterStream</b>
+--------
+            Reader r = rs.getCharacterStream();
+
+<b>Step : 5 Reading Char by Char from Reader</b>
+--------
+             int val = r.read();
+
+<b>Step :6 Write Char by Char from val</b>
+--------
+             while(val != -1){
+             FileWriter.write(val);
+             val = r.read();
+             }
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b>----------------------------------------------
+Connection pooling Mechanism
+----------------------------------------------
+In how many ways we're perform Connection pooling mechanism : -  
+----------------------------------------------------------</b>
+1. Default Connection pooling mechanism
+2. Third party product provided Connection pooling mechanism
+3. Application server provided Connection pooling Mechanism through JNDI
+
+<b>
+Q. Why we use Connection Pooling Mechanism ?
+--------------------------------------------------------------------</b>
+Ans:- To prevent creation and destruction of Connection object
+
+>>> In JDBC Application where ever we want to perform some database operation we will create Connection Object and after that we will destroy Connection object . so this is process will decrease performance of our Application because creation of Connection object and Destruction of Connection Object these two process is very costfull for us to avoid this we will go for Connection Pooling Mechanism....
+
+<b>
+Q. How ConnectionPooling Mechanism Work ?
+--------------------------------------------------------------------</b>
+Ans:- 
+Step 1 :  First we create Connection Pooling Object[we will create pool object]
+Step 2 :  In that pool object we will keep some fix no of Connection Object
+Step 3 :  at the time of loading application pool object is created inside pool object connection object will stored
+Step 4 :  If we want to use Connection object we simply take it from pool object and after work is completed we will send back Connection object to the pool object
+               in this process actually we are taking Connection object from pool object and after that returning back Connection object to the pool object
+
+
+<b>1. Default Connection pooling mechanism provieded by Database software :-
+******************************************************************
+***********
+Approach - 1
+***********</b>
+Steps to create ConnectionPooling Object:-
+-------------------------------------------------------------
+<b>Step 1 : Create DataSource(I) Object</b>
+----------------------------------------------
+DataSource >>> DataSource is that which store all JDBC Parameter like DriverClass , DriverURL , DBUserName , DBPassword
+
+To represent DataSource Object java has given an interface in the form of javax.sql.DataSource , Provided by SUN Microsystem and implementation is provided by all DB Vendor 
+Ex.  OracleDataSource
+       MySQLDataSource
+
+ Oracle DataSource ods  = new OracleDataSource();
+
+<b>Step 2 : Set all the JDBC Parameters
+----------------------------------------------</b>
+public void setURL(String Driver_URL);
+public void setUser(String DB_UserName);
+public void setPassword(String DB_Password);
+
+ods.setURL("jdbc:oracle:thin:@localhost:1521:orcl");	
+ods.setUser("shubhamdb");
+ods.setPassword("shubham");
+
+<b>Step 3 : Getting Connection object from DataSource 
+-----------------------------------------------------</b>
+Connection con = ods.getConnection();
+
+<b>
+***********
+Approach - 2
+***********</b>
+
+<b>   
+Utilization of OracleConnectionPoolDataSource[oracle.jdbc.Pool]
+------------------------------------------------------------------</b>
+
+1. Create OracleConnectionPoolDataSource 
+               OracleConnectionPoolDataSource ds = new OracleConnectionPoolDataSouce();
+
+2. Set JDBC Parameters to OracleConnectionPoolDataSource:-
+
+       ds.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+       ds.setURL("javahome");
+       ds.setPassword("javahome");
+
+3. Get PooledConnection object from DataSource :
+    PooledConnection pc = ds.getPooledConnection();
+
+4. Get Connection object from PooledConnection :
+    Connection con = pc.getConnection();
+
+<b>
+2. Third party product provided Connection pooling mechanism
+*********************************************************************</b>
+1. DBCP Connection pooling Mechanism
+
+
+<b>
+1. DBCP Connection Pooling Mehchanism[Provided by Apache Software foundation]
+-------------------------------------------------------------------------</b>
+DataSource : org.apache.commons.dbcp2.BasicDataSource
+Properties  :  setInitialSize(---);
+                         setMaxTotal(---);
+                         setDriverClassName(---);
+                         setUserName(---);
+                         setPassword(---);
+
+Jars : 1. commons-pool2-2.6.2.jar  // https://commons.apache.org/proper/commons-pool/download_pool.cgi
+          2. commons-dbcp-2.1.jar       // https://commons.apache.org/proper/commons-dbcp/download_dbcp.cgi
+          3. commons-logging-1.2.jar // https://commons.apache.org/proper/commons-logging/download_logging.cgi
+          4. ojdbc8.jar 
+
+<b>
+2. Proxol Connection Mechanism
+-------------------------------------------------------------------------</b>
+DataSource : org.logicalcobwebs.proxol.ProxolDataSource
+Properties  : setDriver("oracle.jdbc.OracleDriver");
+                        setDriverURL("jdbc:oracle:thin:@localhost@:1521:orcl");
+                        setUser("shubhamdb");
+                        setPassword("shubham");
+                        setMinimunConnectionCount(5);
+                        setMaximumConnectionCount(10);
+
+Jars:-    1. commons-pool-2.3.jar
+              2. commons-dbcp-2.1.jar
+              3. commons-logging-1.2.jar
+              4. ojdbc6.jar 
+
+
+<b>
+2. Proxol Connection Mechanism
+3. C3P0 Connection Pooling Mechanism
+</b>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b>
+----------------------------------------------
+Callable Statement(I)
+----------------------------------------------    
+</b>
+<b>
+    
+Q. Difference b/w Statement , PreparedStatement and CallableStatement ?
+--------------------------------------------------------------------------------------------
+</b>
+Ans:- Statement    --------->  When we have to execute different-different SQL query at each individual lines the we should have to go for Statement...
+          PreparedStatement --------->  When we have to execute same SQL query every time or in the next sequence inorder to improve performance of our JDBC 			                                             application then we should have to go for PreparedStatement
+         Callable Statement  --------->  When we want execute some stored procedures and functions after particular duration from java application and that particulat stored                                                                procedures and functions are defined in database side then we have to go for CallableStatement
+
+
+<b>
+    
+Q. Difference b/w Statement , PreparedStatement and CallableStatement ?
+--------------------------------------------------------------------------------------------
+</b>
+Ans:-  
+
+Stored Procedures ----->  Stored procedures is a set of instruction or action defined at database side and it will not return any values after perfoming it even by using                                              "return" keyword..
+
+<b>
+    
+Syntax of Stored Procedures :-
+-------------------------------------
+</b>
+create or replace Proced_name [(Param_List)]
+AS
+-----Global Declarations-----
+BEGIN
+-----Database Logic------
+END Proced_name;
+/                 ----> to save and compile
+
+
+Stored function -----> Stored function is a set of instruction or action defined at database side and it will return values after perfoming it  by using "return" keyword..
+
+<b>
+    
+Syntax of Stored function :-
+-------------------------------------
+</b>
+create or replace Func_name[(Param_List)] return Data_Type
+AS
+-----Global Declaration-----
+BEGIN
+-----Database Logic-------
+return value;
+END Func_name;
+/                         ----> to save and compile
+
+
+<b>
+    
+Three types of Paramteres are there:-
+----------------------------------------------------
+</b>
+1. IN Type Parameter[Giving value to Procedure call from Procedure body]
+>>>Var_name IN Data_type
+
+2. OUT Type Parameter[Getting value from Procedure body to Procedure Call]
+>>> Var_name OUT Data_type
+
+3. INOUT Type Parameter[Carry data from Procedure call to Procedure body or Procedure body to Procedure call]
+>>> Var_name INOUT Data_type
+
+
+SYS_REFCURSOR[System Refrence Cursor]
+
+<b>
+    
+In PROCEDURES and FUNCTIONS
+----------------------------------------------
+</b>
+ 1. SYS_REFCUSOR type varialbe is for OUT type parameter only[SYS_REFCURSOR is valid for OUT type parameter only]
+ 2. Open SYS_REFCURSOR variable before select SQL query
+
+create or replace PROCEDURE getEmps(sal IN float , emps OUT SYS_REFCUROSR)
+AS
+BEGIN
+open emps for 
+select * from emp1 where ESAL < sal;
+END getEmps;
+/ 
+
+<b>
+    
+In JDBC Applications 
+----------------------------
+</b>
+
+ CallableStatement cst = con.prepareCall("{call getEmps(?,?)}");
+ cst.setFloat(1,8000);
+ cst.registerOutParameter(2 , OracleTypes.CURSOR);
+ cst.execute();
+
+ ResultSet rs = (ResultSet)cst.getObject(2);
+
+ while(rs.next()){
+ sopln("------------");
+ sopln("------------");
+ sopln("------------");
+ sopln("------------");
+} 
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<b>
+    ----------------------------------------------
+Transaction Management
+----------------------------------------------
+</b>
+Transaction Management >>> Transaction Management is a unit[Collection] of work which was perform by front end application on back end system
+Ex. Deposit some money on bank accout
+      Withdrawl some money from bank account
+
+
+<b>
+    
+If we have to perform transaction management 4 principle listed below must be followed:-
+--------------------------------------------------------------------------------------------------------------------------
+</b>
+<b>
+A---> Atomicity
+---------------------
+</b>
+Perform either all operations[event] or none of the operations[Transaction must be in SUCCESS state or FAILURE state]
+
+User 1: Has to submit 10000 Rs to User 2
+User 2: 
+
+<b>C---> Consistency
+---------------------</b>
+Before Transaction and after transaction Database must be in Stable state
+
+<b>
+    I----> Isolation
+--------------------
+</b>
+Perform more than operation at a same time on single data item is called Concurrent Transaction . In Concurrent transaction one Transaction execution should not effect other Transaction execution
+
+<b>
+    D---> Durablity
+-------------------
+</b>
+It is the situation that after transaction if we've any system failure [Crash/Fire...] occur then the modification which you have done during transaction must be preserved... 
+
+>>> If we perform Transaction Management in our application we must followed 4 priniciplr of transaction Management [ACID]
+>>> JDBC Provided limited support for Transaction management in JDBC it will provide support only for Atomicity and Isolation . After that if we want full support        compulsory we should have to go for JTA [Java Transaction API] or Struts Framework...
+
+>>> In JDBC whenever we make Connection automatically it is in AutoCommit Mode
+       Commit ---> Submit SQL query to DB enginee will be temporary or permanent
+
+******public void setAutoCommit(boolean b)******
+
+if b will be true  then Connection will be in AutoCommit mode .
+if b will be false then Connection will not be in AutoCommit mode.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+<b>
+---------------------------------------------------------------------------------------
+SavePoint(I)
+------------------
+</b>
+1. It is a interface present in javax.sql package 
+2. It is introduced in JDBC version 3.0
+3. Driver software vendor is responsible to provide implementation 
+4. Savepoint concept is applicable only for Transaction Managements.
+
+<b>
+    Savepoint
+--------------
+</b>
+>>> With in a tranaction if we want to roll back / block some group of operations based on some condition then we should go for Savepoint 
+>>> Some drivers won't provide support for Savepoint . Type-1 Driver won't provide support , but type-4 Driver can provide support
+>>> type-4 Driver or Oracle provided support for setSavepoint() and rollback() but not for releaseSavepoint()
+
+<b>
+----------------------------------------------------------------------------------------------------
+Isolation Levels:
+----------------------
+</b>
+If we perform more than one operation on a signle data item then there may be a chance of data inconsistency or concurrency problem...
+due to which following isolation problems occur:-
+<b>
+--------------------------------------------------------------------
+1. Lost Update Problem..
+2. Dirty Read Problem
+3. Non Repeatable Read Problem
+4. Panthom Read Problem
+</b>
+
+<b>
+    java.sql.Connection
+-------------------------------
+</b>
+<b>public static final int TRANSACITON_NONE = 0;</b>
+---> it will not resolve any of the cincurrenct problem , it will represent all concurency problem
+
+<b>public static final int TRANSACTION_READ_UNCOMMITED = 1;
+----> it will resolve lost update problem and it will re</b>present all remaining problesm. 
+
+<b>public static final int TRANSACTION_READ_COMMITED = 2;</b>
+-----> it will resolve lost update problem and dirty read problem and it will represent a;; remaining problem
+
+<b>public static int TRANSACTION_REPEATABLE_READ = 4;</b>
+-----> it will resolve lost update problem , Dirty Read problem and Non repeatable
+read and it will represent all remaining problems..
+
+<b>public static final int  TRANSACTION_SERIALIZABLE = 8;</b>
+-----> it will resolve all concurency problems..
+
+public void setTransactionIsolation(int val)
+EX: con.setTransactionIsolation(Connection.TRANSACTION_READ_COMITED);
+       con.setTransactionIsolation(2);
+
+
+
+
+<b>
+ RowSets
+-------------
+</b>
+Rowset is an object , it is able to store fetched data from database in more powerfull manner when compared with ResultSet
+
+<b>
+Q. What are the difference b/w ResultSet and RowSet?
+---------------------------------------------------------------------------
+</b>
+Ans:- 
+1. In JDBC , by default  , ResultSet is not implementing java.io.Serializable interface, so that it is not eligible to transfer in network.
+     In JDBC , by default , RowSets are implementing java.io.Serializable interface , so that, these are eligible to transfer in the network.
+
+2. In JDBC , by default , all ResultSet objects are Read only and Forward only , they are not Scrollable and Updatable .
+     In JDBC , by deafult all Rowsets are Scrollable and Updatable...
+
+3. In JDBC by default ResultSet objects are connected ResultSet objects  , that is in JDBC , ResultSet objects must required connection to the database always..
+    In JDBC Disconnected RowSets are existed , which are not required to have the connection always with database..
+
+4. In JDBC , ResultSet are not having Event-Notification model.
+     In JDBC , RowSets are having Event-Notification model to generate events at each and operation in RowSet.
+
+5. In JDBC ResultSets are not cached objects , every time we must interact with database to get results even the same results are generated. 
+    In JDBC Cached RowSets are existed Which are resuable with out interacting with database everytime.. 
+
+6. ResultSet is existed in java.sql package 
+    RowSet is existed in javax.sql package
+
+7. In ResultSet we can not combine two result set object in single one it means join ResultSet object are not available 
+    In RowSets we can combine two rowsets object in single one it means join RowSets object are available    
+
+8. Not possible to maintain filter in ResultSet object without using "where" clause inorder to filter the Data 
+     but in RowSet we can maintain filter in RowSets inorder to filter the Data
+
+<b>In JDBC , RowSets are divided in two ways.</b>
+
+<b>
+1. Connected RowSets 
+-------------------------------
+</b>
+These RowSets are same as ResultSet , which are required connection with database always to perform database operations in JDBC Application.
+Ex. Jdbc RowSet
+
+<b>
+2. Disconnected RowSets.
+----------------------------------
+</b>
+These RowSet are not required to manage connection always in JDBC application , they will manage Connection while performing operations with database only , in the remaining time Connection may not be existed
+EX..     Cached RowSet
+            |-WebRowSet
+                 |-FilteredRowSet
+                 |- JoinRowSet
+
+SUN Microsystem has provided all the rowsets in the form of 
+interfaces and whose implementations classes are provided by all database vendor. 
+
+JDBC has provided all the RowSets in the form of the following two packages.
+1) javax.sql;
+2) javax.sql.rowset
+
+For all the RowSet , there is a common and default super type is existed that is 
+"javax. sql.RowSet" , it is a child interface to "java.sql.ResultSet"
+ 
+ java.sql.ResultSet (Parent)
+           ^   
+           |
+           |
+javax.sql.RowSet   (Child)
+             
+javax.sql.RowSet (I)
+javax.sql.rowset.JdbcRowSet (I)
+javax.sql.rowset.CachedRowSet (I)
+javax.sql.rowset.WebRowSet (I)
+javax.sql.rowset.JoinRowSet (I)
+javax.sql.rowset.FilteredRowSet (I)
+
+
+SUN Microsystem has provided his own impmentation part for all the RowSet interfaces as refrence implementation in the form of the following classes.
+
+com.sun.rowset.JdbcRowSetImpl
+com.sun.rowset.CachedRowSetImpl	
+com.sun.rowset.WebRowSetImpl
+com.sun.rowset.JoinRowSetImpl
+com.sun.rowset.FilteredRowSetImpl
+
+Oracle has provided implementation for all the above RowSets in the form of "oracle.jdbc.rowset" package in the "ojdbc8.jar".
+
+oracle.jdbc.rowset.OracleJdbcRowSet
+oracle.jdbc.rowset.OracleCachedRowSet
+oracle.jdbc.rowset.OracleWebRowSet
+oracle.jdbc.rowset.OracleJoinRowSet
+oracle.jdbc.rowset.OracleFilteredRowSet
+
+
+<b>
+
+How to create RowSets objects:-
+----------------------------------------------
+</b>
+RowSetFactory rsf = RowSetProvider.newFactory();
+
+ JdbcRowSet jrs = rsf.createJdbcRowSet();
+ CachedRowSet crs = rsf.createCachedRowSet();
+WebRowSet wrs = rsf.createWebRowSet();
+JoinRowSet jnrs = rsf.createJoinRowSet();
+FilteredRowSet() frs  = rsf.createFilteredRowSet();
+
+
+<b>
+JdbcRowSet(I):-
+---------------------
+</b>
+>> It is child interface of RowSet
+>> it is exactly same as ResultSet except that it is Scrollable and UpdatableResultSet
+>> JdbcRowSet is connected rowset and hence JdbcRowSet compulsory required Connection  
+>> JdbcRowSet is non-serializable and hence we cannot send over across the network...
+
+<b>
+CachedRowSet(I):-
+----------------------
+</b>
+>> It is child interface of RowSet
+>> by default it is scrollable and updatable 
+>> CachedRowSet is disconnected RowSet . ie we can use RowSet without having database connection
+>> CachedRowSet is serializable  and hence we send over across the network...
+>> The main advantage of cached rowset is we can send this rowset object for multiple people across the network and all those people can access RowSet data without       having DB connection
+>> if we perform any update operation like (insert,delete,update) to the CachedRowSet to reflect those changes compulsory Connection should be established
+>> once Connection establish then those changes will be reflected ind database
+
+<b>
+WebRowSet(I):-
+---------------------
+</b>
+>> It is Child interface of CachedRowSet
+>> by default it is scrollable and updatable
+>> WebRowSet is disconnected RowSet . ie we can use RowSet without having database connection
+>>  WebRowSet is serializable  and hence we send over across the network...
+>> WebRowSet can publish data to xml file , which are very helpfull for enterprise applications..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------
+SQL Attack using PreparedStatement (Not Confirmed)
+----------------------------------------------
+
+2 SESSION
+
+</pre>
+           
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h3>NewBiz</h3>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+        -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer><!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/mobile-nav/mobile-nav.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
