@@ -1296,6 +1296,1727 @@ public class JdbcApp20 {
             </div>
 
 
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo21">App21 Employee App</button>
+                <div id="demo21" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import com.shubham.jdbc.EmployeeService.EmployeeService;
+
+// Employee app
+public class JdbcApp21 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement stmt = null;
+		Scanner sc = null;
+		
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			stmt = con.createStatement();
+			
+			sc = new Scanner(System.in);
+			System.out.println("  Welcome to Employee App");
+			System.out.println("----------------------------");
+			
+			while(true) {
+				System.out.println("1. Insert Employee");
+				System.out.println("2. Search Employee");
+				System.out.println("3. Update Employee");
+				System.out.println("4. Delete Employee");
+				System.out.println("5. Show All Employee");
+				System.out.println("6. Exit");
+				System.out.println("Choose Your Option");
+				
+				int option = sc.nextInt();
+				EmployeeService emp = new EmployeeService();
+				switch(option) {
+				
+				case 1:
+					  System.out.println("-----Employee Insert Module-----");
+					  emp.insert();
+					  System.out.println();
+					  break;
+					 
+				case 2:
+					  System.out.println("-----Employee Search Module-----");
+					  emp.search();
+					  System.out.println(); 
+					  break;
+					  
+				case 3:
+					  System.out.println("-----Employee Update Module-----");
+					  emp.update();
+					  System.out.println(); 
+					  break;
+					  
+				case 4:
+					  System.out.println("-----Employee Update Module-----");
+					  emp.delete();
+					  System.out.println(); 
+					  break;
+			    
+				case 5:
+					  System.out.println("-----Employee Show Module-----");
+					  emp.show();
+					  System.out.println(); 
+					  break;
+					  
+				case 6:
+					  System.out.println("***** ThankYou For Using Employee App*****");
+					  System.exit(0);
+					  break;
+					  
+				default:	
+					  System.out.println("Enter No From 1,2,3,4,5,6....");
+					
+					 
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				stmt.close();
+				sc.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+<b>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+package com.shubham.jdbc.EmployeeService;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class EmployeeService {
+	 Scanner sc = null;
+	 Connection con = null;
+	 Statement stmt = null;
+	 ResultSet rs = null;
+	 
+	public EmployeeService() {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			stmt = con.createStatement();
+			sc = new Scanner(System.in);
+			
+		} catch (Exception e) {
+		      e.printStackTrace();
+		}
+		
+	}
+	
+	public void insert() {
+
+		try {
+			System.out.print("Enter Employee Number : ");
+            int eno = sc.nextInt();
+            
+            System.out.print("Enter Employee Name :");
+            String ename = sc.next();
+            
+            System.out.print("Enter Employee Salary :");
+            float esal = sc.nextFloat();
+            
+            System.out.print("Enter Employee Address : ");
+            String eaddr  = sc.next();
+		
+		
+		    rs = stmt.executeQuery("select * from emp1 where ENO = "+eno); 
+		    boolean b = rs.next(); // if b==true then record is existed if b==false then record not existed
+		    
+		    if(b==true) {
+		    	System.out.println("Employee "+eno+" Existed already Successfully");
+		    }
+		    else {
+		    	int rowCount = stmt.executeUpdate("insert into emp1 values ("+eno+",'"+ename+"',"+esal+",'"+eaddr+"')"); 
+		    	if(rowCount == 1) {
+			    	System.out.println("Employee "+eno+" Inserted Successfully");
+			    }
+		    	else {
+		    		System.out.println("Employee "+eno+" Insertion Failure");
+		    	}
+		    }
+			} catch (Exception e) {
+				 System.out.println("Employee Insertion Fail :");
+		         System.out.println("Reason "+e.getMessage());
+		}
+	}
+	
+	
+	public void search() {
+		
+		try {
+			System.out.print("Enter Employee Number :");
+			int eno = sc.nextInt();
+			
+			rs = stmt.executeQuery("select * from emp1 where eno = "+eno);
+			boolean b= rs.next();
+			if(b==true) {
+				System.out.println("\n\n"+"Employee Details are :");
+				System.out.println("-----------------------------");
+				System.out.println("Employee Number :"+rs.getInt(1));
+				System.out.println("Employee Name :"+rs.getString(2));
+				System.out.println("Employee Salary :"+rs.getFloat(3));
+				System.out.println("Employee Address :"+rs.getString(4));
+			}
+			else {
+				System.out.println("Employee "+eno+" Not Existed...");
+			}
+		} catch (Exception e) {
+			System.out.println("Employee Seacrh Failure");
+			System.out.println("Reason : "+e.getMessage());
+		}
+	}
+	public void update() {
+		
+		try {
+			System.out.println("Enter Employee Number Which You Want To Update :");
+			int eno = sc.nextInt();
+			
+			rs = stmt.executeQuery("select * from emp1 where eno = "+eno);
+			boolean b = rs.next();
+			if(b==true) {
+				System.out.println("Employee "+eno+" Current Details Are :");
+				System.out.println("---------------------------------------------");
+				System.out.println("Employee Number :"+rs.getInt(1));
+				System.out.print("Employee Old Name :"+rs.getString(2)+", New Value :");
+				String val1 = sc.next();
+				String ename = "";
+				if(val1==null || val1.equals("")) {
+					ename = rs.getString(2);
+				}
+				else {
+					ename = val1;
+				}
+				System.out.print("Employee Old Salary :"+rs.getFloat(3)+", New Value :");
+				String val2 = sc.next();
+				float esal=0.0f;
+				if(val2 == null || val2.equals("")) {
+				 esal = rs.getFloat(3); 
+			   }
+			   else {
+				   esal = Float.parseFloat(val2);
+				   }
+				
+				System.out.print("Employee Old Address :"+rs.getString(4)+", New Value :");
+				String eaddr = sc.next();
+				String val3 = "";
+				
+				if(val3 == null || val3.equals("")) {
+					eaddr = rs.getString(4);
+				}
+				else {
+					eaddr = val3;
+				}
+					
+				int rowCount = stmt.executeUpdate("update emp1 set ENAME = '"+ename+"', ESAL = "+esal+", EADDR = '"+eaddr+"' where ENO = "+eno);
+			    if(rowCount == 1) {
+			    	System.out.println("Employee "+eno+" Updated Successfully");
+			    }   
+			    else {
+			    	System.out.println("Employee "+eno+" Updation Failure");
+			    }
+			}
+			      
+			else {
+				System.out.println("Employee "+eno+" Not Existed");
+			}
+		} catch (Exception e) {
+			System.out.println("Employee Updation Failed");
+			System.out.println("Reason :"+e.getMessage());
+		}
+	}
+	public void delete() {
+		
+		try {
+			System.out.println("Enter Employee Number :");
+			int eno = sc.nextInt();
+			rs = stmt.executeQuery("select * from emp1 where ENO ="+eno);
+			boolean b = rs.next();
+			if(b == true) {
+				int rowCount = stmt.executeUpdate("delete from emp1 where ENO ="+eno);
+				if(rowCount ==  1) {
+					System.out.println("Employee "+eno+" Deleted");
+				}
+				else {
+					System.out.println("Employee"+eno+" Not Deleted");
+				}
+			}
+			else {
+				System.out.println("Employee "+eno+" Not Existed");
+			}
+		} catch (Exception e) {
+			System.out.println("Employee Deletion Failure :");
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void show() {
+		
+		try {
+			ResultSet rs = stmt.executeQuery("select * from emp1 order by ENO ASC");
+			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("------------------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo22">App22 ResultSet 1 Check DB support particular type of resultset or not</button>
+                <div id="demo22" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+// JDBC Application to check whether database support particular types of ResultSet or not
+public class JdbcApp22 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			DatabaseMetaData dmd = con.getMetaData();
+			System.out.println(dmd.supportsResultSetConcurrency(1007,1008));
+			System.out.println(dmd.supportsResultSetConcurrency(ResultSet.CONCUR_READ_ONLY , ResultSet.CONCUR_UPDATABLE));
+			System.out.println(dmd.supportsResultSetConcurrency(1003,1005));
+			System.out.println(dmd.supportsResultSetConcurrency(1003,1004));
+			System.out.println("------------------------------------------------");
+			System.out.println("CONCUR_READ_ONLY  "+dmd.supportsResultSetType(1007));
+			System.out.println("CONCUR_UPDATABLE  "+dmd.supportsResultSetType(1008));
+			System.out.println("TYPE_FORWARD_ONLY  "+dmd.supportsResultSetType(1003));
+			System.out.println("TYPE_SCROLL_INSENSITIVE  "+dmd.supportsResultSetType(1004));
+			System.out.println("TYPE_SCROLL_SENSITIVE  "+dmd.supportsResultSetType(1005));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo23">App23 ResultSet 2 use of next() and previou()</button>
+                <div id="demo23" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// use of next() and previous() to fetch data in both backward and forward direction
+public class JdbcApp23 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			rs = stmt.executeQuery("select * from emp1");
+			
+			System.out.println("Employee Details In Forward Direction");
+			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("----------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+			System.out.println("\n\n");
+			
+			System.out.println("Employee Details In Backward Direction");
+			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("----------------------------");
+			while(rs.previous()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				stmt.close();
+				rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo24"> App24 ResultSet 3 Navigate Records using SCROLLABE_RESULTSET</button>
+                <div id="demo24" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+//  JDBC Application to navigate records using SCROLLABLE_RESULTSET
+public class JdbcApp24 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement();
+			rs = st.executeQuery("select * from emp1 order by eno asc");
+			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("---------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+			System.out.println("");
+			
+			rs.beforeFirst(); // 1st records ke pahle ja rhe hai
+			rs.next(); // 1st records pe agaye
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("First Records :"+rs.getInt(1));
+			System.out.println();
+			
+			rs.afterLast();
+			rs.previous(); 
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("Last Records :"+rs.getInt(1));
+			System.out.println();
+			
+			rs.first();
+			rs.previous(); 
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("First Records :"+rs.getInt(1));
+			System.out.println();
+			
+			rs.last();
+			rs.previous(); 
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("Last Records :"+rs.getInt(1));
+			System.out.println();
+			
+			rs.absolute(3); // if +ve then from top
+			System.out.println("Third Position From Top :"+rs.getInt(1));
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println();
+			
+			rs.absolute(3); // if -ve then from Bottom
+			System.out.println("Third Position From Bottom :"+rs.getInt(1));
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println();
+			
+			rs.first();
+			rs.relative(3);
+			System.out.println("Fourth Position From Bottom :"+rs.getInt(1));
+			System.out.println("Current Cursor Top :"+rs.getRow());
+			System.out.println();
+			
+			rs.last();
+			rs.relative(-4);
+			System.out.println("Fourth Position From Bottom :"+rs.getInt(1));
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println();
+			
+			rs.last();
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("Whether cursor is in last position :"+rs.isLast());
+			System.out.println();
+			
+			rs.first();
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("Whether cursor is in first position :"+rs.isFirst());
+			System.out.println();
+			
+			rs.afterLast();
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("Whether cursor is in afterLast position :"+rs.isAfterLast());
+			System.out.println();
+			
+			rs.beforeFirst();
+			System.out.println("Current Cursor Position :"+rs.getRow());
+			System.out.println("Whether cursor is in beforeFirst position :"+rs.isBeforeFirst());
+			System.out.println();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo25"> App25  ResultSet 4 Without using insert SQL query insert records to DB</button>
+                <div id="demo24" class="collapse">
+                    <pre>package com.shubham.jdbc;
+// without using insert sql query insert record into database using SCROLLBLE_RESULTSET
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JdbcApp25 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		Scanner sc = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE , ResultSet.CONCUR_UPDATABLE);
+			rs = st.executeQuery("select eno,ename,esal,eaddr from emp1");
+			
+			sc = new Scanner(System.in);
+			
+			while(true) {
+				System.out.print("Employee Number");
+				int eno = sc.nextInt();
+				System.out.print("Employee Name:");
+				String ename = sc.next();
+				System.out.println("Employee Salary:");
+				float esal = sc.nextFloat();
+				System.out.println("Employee Adress:");
+				String eaddr = sc.next();
+				
+				rs.moveToInsertRow();
+				rs.updateInt(1,eno);
+				rs.updateString(2,ename);
+				rs.updateFloat(3,esal);
+				rs.updateString(4,eaddr);
+				rs.insertRow(); // for inserting above records into database
+				
+				System.out.println("Employee "+eno+" Inserted Succesfully");
+				System.out.println("One more Employee [yes/no]");
+				String option = sc.next();
+				
+				if(option.equalsIgnoreCase("yes")) {
+					continue;
+				}
+				else {
+					break;
+				}
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo26"> App26 ResultSet 5 Without using update SQL query update records in DB</button>
+                <div id="demo26" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// without using update sql query update record into database using SCROLLBLE_RESULTSET 
+public class JdbcApp26 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			DriverManager.registerDriver(new OracleDriver());
+			
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE , ResultSet.CONCUR_UPDATABLE);
+			rs = st.executeQuery("select ENO,ENAME,ESAL,EADDR from emp1");
+			
+			while(rs.next()) {
+				float esal = rs.getFloat("ESAL");
+				if(esal < 10000) {
+					esal=esal+500;
+					rs.updateFloat(3,esal);
+					
+					rs.updateRow(); // for updating above records into database
+					
+					System.out.println("Employee "+rs.getInt("ENO")+" Updated Successfully");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo26"> App26 ResultSet 5 Without using update SQL query update records in DB</button>
+                <div id="demo26" class="collapse">
+                    <pre>package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// without using update sql query update record into database using SCROLLBLE_RESULTSET 
+public class JdbcApp26 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			DriverManager.registerDriver(new OracleDriver());
+			
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE , ResultSet.CONCUR_UPDATABLE);
+			rs = st.executeQuery("select ENO,ENAME,ESAL,EADDR from emp1");
+			
+			while(rs.next()) {
+				float esal = rs.getFloat("ESAL");
+				if(esal < 10000) {
+					esal=esal+500;
+					rs.updateFloat(3,esal);
+					
+					rs.updateRow(); // for updating above records into database
+					
+					System.out.println("Employee "+rs.getInt("ENO")+" Updated Successfully");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo27"> App27 ResultSet 6 Without using delete SQL query delete records to DB</button>
+                <div id="demo27" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.driver.OracleDriver;
+
+// without using delete sql query delete record into database using SCROLLBLE_RESULTSET
+public class JdbcApp27 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		
+		try {
+			DriverManager.registerDriver(new OracleDriver());
+			
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE , ResultSet.CONCUR_UPDATABLE);
+			rs = st.executeQuery("select ENO,ENAME,ESAL,EADDR from emp1 order by eno asc");
+			
+			 while(rs.next()){
+			   int eno = rs.getInt(1);
+                           float esal = rs.getFloat(3);
+	                     if(esal<10000){
+	                         rs.deleteRow();
+	              System.out.println("Employee "+eno+" Deleted Successfully");
+	             }
+	          }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				st.close();
+				rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace(); 
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo28"> App28[Fetch Records Using Properties file]</button>
+                <div id="demo28" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+
+// fetch the records by using properties file
+public class JdbcApp28 {
+
+	public static void main(String[] args) {
+	Connection con = null;
+	Statement st = null;
+	ResultSet rs = null;
+	FileInputStream fis = null;
+	try {
+		fis = new FileInputStream("C:\\Users\\SHUBHAM\\Desktop\\My adv java\\JDBC\\Prorgams\\App28[Fetch Records Using Properties file]\\src\\com\\shubham\\jdbc\\db.properties");
+		Properties p = new Properties();
+		p.load(fis);
+		
+		String driverClass = p.getProperty("driverClass");
+		String driverURL = p.getProperty("driverURL");
+		String DBUserName = p.getProperty("DBUserName");
+		String DBPassword = p.getProperty("DBPassword");
+		
+		Class.forName(driverClass);
+		con = DriverManager.getConnection(driverURL, DBUserName, DBPassword);
+		st = con.createStatement();
+		rs = st.executeQuery("select * from emp1 order by eno asc");
+		System.out.println("ENO\tENAME\tESAL\tEADDR");
+		System.out.println("-----------------------------------");
+		while(rs.next()){
+			System.out.print(rs.getInt(1)+"\t");
+			System.out.print(rs.getString(2)+"\t");
+			System.out.print(rs.getFloat(3)+"\t");
+			System.out.println(rs.getString(4));
+		}
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+finally {
+	try {
+		con.close();
+		rs.close();
+		st.close();
+		fis.close();
+	} catch (Exception e2) {
+	   e2.printStackTrace();
+	}
+}
+	}
+
+}
+<b>--------------------------------------------------------------------------------------------------------------</b>
+db.propertiesfile
+<b>-----------------</b>
+driverClass = oracle.jdbc.OracleDriver
+driverURL = jdbc:oracle:thin:@localhost:1521:orcl
+DBUserName = shubhamdb
+DBPassword = shubham
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo29"> App29[Fetch Records Using Properties file]</button>
+                <div id="demo29" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.shubham.connectionfactory.ConnectionFactory;
+
+public class JdbcApp29 {
+	
+	public static void main(String[] args) {
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			Connection con = ConnectionFactory.getConnection();
+			st = con.createStatement();
+			rs = st.executeQuery("select * from emp1 order by eno asc");
+			System.out.println("  ENO\tENAME\tESAL\tEADDR");
+			System.out.println("-------------------------------");
+			
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+       finally {
+    	   try {
+			ConnectionFactory.cleanUp();
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+       }
+	}
+}
+
+
+<b>------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+package com.shubham.connectionfactory;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ConnectionFactory {
+    static Connection con = null;
+    
+    static {
+    	try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+		} catch (Exception e) {
+		 e.printStackTrace();
+		}
+    }
+    
+    public static Connection getConnection() {
+    	return con;
+    }
+    
+    public static void cleanUp() {
+    	try {
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    } 
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo30"> App30[Batch Updation thru statement]</button>
+                <div id="demo30" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import com.shubham.connectionfactory.ConnectionFactory;
+
+public class JdbcApp30 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		Statement st = null;
+		try {
+		 con = ConnectionFactory.getConnection();
+		 st.addBatch("insert into emp1 values(109,'HHH',5000,'Hyd')");
+		 st.addBatch("update emp1 set esal = esal + 500 where esal less than 10000);
+		 st.addBatch(delete from emp1 where eaddr = Chen);
+		 
+		 int[] rowCount = st.executeBatch();
+		 for(int i=0 ; i less than rowCount.length ; i++) {
+			 System.out.println("Records Updated :"+rowCount[i]);
+		 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+      finally {
+    	  try {
+			ConnectionFactory.cleanUp();
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+      }
+	}
+
+}
+<b>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+package com.shubham.connectionfactory;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
+
+public class ConnectionFactory {
+    static Connection con = null;
+    static FileInputStream fis = null;
+    static {
+    	try {
+    		fis = new FileInputStream("C:\\Users\\SHUBHAM\\Desktop\\My adv java\\JDBC\\Prorgams\\App30[Batch Updation 1]\\src\\db.properties");
+        	Properties p =new Properties();
+        	String driverClass = p.getProperty("driverClass");
+    		String driverURL = p.getProperty("driverURL");
+    		String DBUserName = p.getProperty("DBUserName");
+    		String DBPassword = p.getProperty("DBPassword");
+    		
+    		Class.forName(driverClass);
+    		con = DriverManager.getConnection(driverURL, DBUserName, DBPassword);
+    		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
+    public static Connection getConnection() {
+    	return con;
+    }
+    
+    public static void cleanUp() {
+    	try {
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+}
+<b>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+driverClass = oracle.jdbc.OracleDriver
+driverURL = jdbc:oracle:thin:@localhost:1521:orcl
+DBUserName = shubhamdb
+DBPassword = shubham
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo31"> App31[PreparedStatement insert records]</button>
+                <div id="demo31" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+import com.shubham.jdbc.connectionfactory.ConnectionFactory;
+
+public class JdbcApp31 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		Scanner sc = null;
+        try {
+			con = ConnectionFactory.getConnection();
+			pst = con.prepareStatement("insert into emp1 values(?,?,?,?)");
+			sc = new Scanner(System.in);
+			while(true) {
+				System.out.print("Enter employee number");
+				int eno = sc.nextInt();
+				
+				System.out.print("Enter employee name");
+				String ename = sc.next();
+				
+				System.out.print("Enter employee salary");
+				float esal = sc.nextFloat();
+				
+				System.out.println("Enter employee address");
+				String eaddr = sc.next();
+				
+				pst.setInt(1, eno);
+				pst.setString(2, ename);
+				pst.setFloat(3, esal);
+				pst.setString(4, eaddr);
+				pst.executeUpdate();
+				
+				System.out.println("One more employee [yes/no]");
+				String option = sc.next();
+				
+				if(option.equalsIgnoreCase("yes"))
+				{
+					continue;
+				}
+				else {
+					break;
+				}
+			
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+<b>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+        package com.shubham.jdbc.connectionfactory;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
+
+public class ConnectionFactory {
+	static Connection con = null;
+    static FileInputStream fis = null;
+    static {
+    	try {
+    		fis = new FileInputStream("C:\\Users\\SHUBHAM\\Desktop\\My adv java\\JDBC\\Prorgams\\App31[PreparedStatement insert records]\\src\\db.properties");
+        	Properties p =new Properties();
+        	String driverClass = p.getProperty("driverClass");
+    		String driverURL = p.getProperty("driverURL");
+    		String DBUserName = p.getProperty("DBUserName");
+    		String DBPassword = p.getProperty("DBPassword");
+    		
+    		Class.forName(driverClass);
+    		con = DriverManager.getConnection(driverURL, DBUserName, DBPassword);
+    		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
+    public static Connection getConnection() {
+    	return con;
+    }
+    
+    public static void cleanUp() {
+    	try {
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+}
+
+
+<b>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+        driverClass = oracle.jdbc.OracleDriver
+driverURL = jdbc:oracle:thin:@localhost:1521:orcl
+DBUserName = shubhamdb
+DBPassword = shubham
+
+		
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo32"> App32 PreparedStatement delete records</button>
+                <div id="demo32" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+import com.shubham.jdbc.connectionfactory.ConnectionFactory;
+
+public class JdbcApp32 {
+
+	public static void main(String[] args) {
+		PreparedStatement ps = null;
+		Scanner sc = null;
+		
+		try {
+			Connection con = ConnectionFactory.getConnection();
+			sc = new Scanner(System.in);
+			ps = con.prepareStatement("delete from emp1 where esal less than ? ");
+			System.out.println("Enter Salary Range:");
+			float sal_Range = sc.nextFloat();
+			
+			ps.setFloat(1,sal_Range);
+			int rowCount = ps.executeUpdate();
+			
+			if(rowCount > 0) {
+				System.out.println("Records Deleted "+rowCount);
+			}
+			else {
+				System.out.println("No records deleted");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				sc.close();
+				ps.close();
+				ConnectionFactory.cleanUp();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo33"> App33 PreparedStatement update records</button>
+                <div id="demo33" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+import com.shubham.jdbc.connectionfactory.ConnectionFactory;
+
+public class JdbcApp33 {
+
+	public static void main(String[] args) {
+		PreparedStatement ps = null;
+		Scanner sc = null;
+		try {
+			Connection con = ConnectionFactory.getConnection();
+			sc = new Scanner(System.in);
+			ps = con.prepareStatement("update emp1 set esal = esal + ? where esal  ?");
+			
+			System.out.println("Enter Bonus Amount:");
+			int bount_Amt = sc.nextInt();
+			
+			System.out.println("Enter Salary Range:");
+			float sal_Range = sc.nextFloat();
+			
+			ps.setInt(1,bount_Amt);
+			ps.setFloat(2,sal_Range);
+			int rowCount = ps.executeUpdate();
+			
+			if(rowCount > 0) {
+				System.out.println("Records Updated "+rowCount);
+			}
+			else {
+				System.out.println("no records updateds");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				ConnectionFactory.cleanUp();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo34"> App34 PreparedStatement fetch records</button>
+                <div id="demo34" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+import com.shubham.jdbc.connectionfactory.ConnectionFactory;
+
+public class JdbcApp34 {
+
+	public static void main(String[] args) {
+		Scanner sc = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			sc = new Scanner(System.in);
+			Connection con = ConnectionFactory.getConnection();
+			ps = con.prepareStatement("select * from emp1 where esal less than ?");
+			System.out.println("Enter Salary Range:");
+			float sal_Range = sc.nextFloat();
+			
+			ps.setFloat(1,sal_Range);
+			rs = ps.executeQuery();
+			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("-----------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				sc.close();
+				ps.close();
+				rs.close();
+				ConnectionFactory.cleanUp();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo35"> App35 PreparedStatement with batch updations</button>
+                <div id="demo35" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.shubham.jdbc.connectionfactory.ConnectionFactory;
+
+public class JbdcApp35 {
+
+	public static void main(String[] args) {
+		PreparedStatement pst = null;
+		Connection con = null;
+		
+		try {
+			con = ConnectionFactory.getConnection();
+			pst = con.prepareStatement("insert into emp1 values(?,?,?,?)");
+			
+			pst.setInt(1, 113);
+			pst.setString(2, "MMM");
+			pst.setFloat(3, 6000);
+			pst.setString(4, "Knp");
+			pst.addBatch();
+			
+			pst.setInt(1, 114);
+			pst.setString(2, "NNN");
+			pst.setFloat(3, 7000);
+			pst.setString(4, "Hyd");
+			pst.addBatch();
+			
+			int[] rowcount = pst.executeBatch();
+			
+			for(int rowCount : rowcount) {
+				System.out.println("Rowcount :"+rowCount);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+      finally {
+    	  try {
+    		  pst.close();
+    		  ConnectionFactory.cleanUp();
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+      }
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo36"> App36 Insert BLOB data</button>
+                <div id="demo36" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class JdbcApp36 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		Scanner sc = null;
+		FileInputStream fis;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			pst = con.prepareStatement("insert into emp2 values(?,?)");
+			sc = new Scanner(System.in);
+			
+			System.out.print("Enter employee no : ");
+			int eno = sc.nextInt();
+			pst.setInt(1,eno);
+			
+			// Locate the image(BLOB) location and Make file object
+			File file = new File("C:\\Users\\SHUBHAM\\Desktop\\My adv java\\JDBC\\img\\0.jpg");
+			
+			// Create FileInputStream object with the help of file object
+			fis = new FileInputStream(file);
+			
+			// set the BLOB data to the 2nd PreparedStatement parameter in binary format
+			pst.setBinaryStream(2, fis);
+			System.out.println("Employee "+eno+" with images inserted successfully");
+			
+			pst.executeUpdate();
+			
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+				sc.close();
+				pst.close();
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo37"> App37 Retrive BLOB data</button>
+                <div id="demo37" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class JdbcApp37 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		FileOutputStream fos = null;
+		InputStream is = null;
+		
+		ResultSet rs = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			pst = con.prepareStatement("select * from emp2 order by eno asc");
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("Employee Number : "+rs.getInt(1));
+				int eno = rs.getInt(1);
+				fos = new FileOutputStream("C:\\Users\\SHUBHAM\\Desktop\\My adv java\\JDBC\\img\\"+eno+".jpg");
+				is = rs.getBinaryStream(2); // Getting bit by bit from BinaryStream
+				int val = is.read(); // Reading bit by bit
+				while(val != -1) {
+					fos.write(val);
+					val = is.read();
+				}
+				System.out.println("Employee "+eno+" with image retrieve successfully");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+
+	}
+
+}
+
+
+</pre>
+                </div>
+
+            </div>
+            
+                        
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo38"> App38 insert CLOB data</button>
+                <div id="demo38" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.io.File;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class JdbcApp38 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		PreparedStatement pst = null;
+		FileReader fr = null;
+		
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+			pst = con.prepareStatement("insert into emp3 values(?,?)");
+			
+			pst.setString(1,"web");
+			
+			File file = new File("C:\\Users\\SHUBHAM\\Desktop\\My adv java\\JDBC\\Prorgams\\build.xml");
+			
+			fr = new FileReader(file);
+			pst.setCharacterStream(2, fr);
+			pst.executeUpdate();
+			System.out.println("CLOB data inserted successfully...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+       finally {
+    	   try {
+			con.close();
+			pst.close();
+			fr.close();
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+       }
+	}
+
+}
+
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo39"> App39 retrieve CLOB data</button>
+                <div id="demo39" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.io.FileWriter;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class JdbcApp39 {
+
+	public static void main(String[] args) {
+		Connection con = null;
+		FileWriter fr = null;
+		Reader r = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","shubhamdb","shubham");
+            pst = con.prepareStatement("select * from webapps");
+            rs = pst.executeQuery();
+            
+            while(rs.next()) {
+            	System.out.println("Webapp name :"+rs.getString(1));
+            	String appName = rs.getString(1);
+            	fr = new FileWriter("E:/"+appName+"_web.xml");
+            	r = rs.getCharacterStream(2); // get data into character stream
+            	int val = r.read();  // read character by character from reader
+            	
+            	while(val != -1) {
+            		fr.write(val);   // write character by character
+            	    val = r.read();
+            	}
+            	System.out.println("Document retrieved succesfully...");
+            }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				fr.close();
+				con.close();
+				rs.close();
+				r.close();
+				pst.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+            
+            
+            <div class="col-md-12 mt-3">
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo40"> App40 Connection Pooling Approach - 1</button>
+                <div id="demo40" class="collapse">
+                    <pre>
+package com.shubham.jdbc;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import oracle.jdbc.datasource.OracleDataSource;
+
+// JDBC Application to demonstrate Connection Pooling mechanism by using datasource object[Approach - 1]
+public class JdbcApp40 {
+
+	public static void main(String[] args) {
+		OracleDataSource ds = null;
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			ds = new OracleDataSource(); // created DataSouce Object...
+			ds.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
+			ds.setUser("shubhamdb");
+			ds.setPassword("shubham");
+			
+			con = ds.getConnection();
+			st = con.createStatement();
+			rs = st.executeQuery("select * from emp1 order by ENO ASC");
+			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("-----------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getInt(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getFloat(3)+"\t");
+				System.out.println(rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+			   rs.close();
+			   st.close();
+			   con.close(); // sending Connection object back to pool Object
+			   ds.close(); // destroying DataSource Object
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+}
+
+</pre>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
